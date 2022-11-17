@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "name": "Erick",
+    "uuid": "80dfaa92-dd0e-4e76-901a-6a7099a8a2c9",
+    "expiresOn": "2022-12-16 23:51:52 -0300"
+  },
+  {
+    "name": "ericklemos",
+    "uuid": "a5c547b9-46be-43ed-b4ac-200ec10b0f09",
+    "expiresOn": "2022-12-16 23:50:53 -0300"
+  }
+]

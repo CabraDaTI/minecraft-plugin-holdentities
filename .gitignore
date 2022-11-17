@@ -46,7 +46,6 @@ bin/
 server/cache
 server/libraries
 server/logs
-server/config
 server/plugins
 server/versions
 server/world
