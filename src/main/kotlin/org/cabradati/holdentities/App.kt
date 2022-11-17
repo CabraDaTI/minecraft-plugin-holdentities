@@ -16,6 +16,7 @@ class App : JavaPlugin() {
         server.pluginManager.registerEvents(LeaveEntity(), this)
 
         super.onEnable()
+
     }
 
     private fun registerHoldEvent(entityType: EntityType) {

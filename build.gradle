@@ -1,13 +1,13 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.7.21'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'java'
+    id 'pmd'
 }
 
 group = 'org.cabradati'
 version = '3.0'
 
-shadowJar.destinationDir(file("/server/plugins"))
+jar.destinationDir(file("/server/plugins"))
 
 repositories {
     mavenCentral()
@@ -22,8 +22,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.jetbrains.kotlin:kotlin-stdlib'
     compileOnly 'io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
 
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
@@ -42,8 +42,4 @@ compileKotlin {
 
 compileTestKotlin {
     kotlinOptions.jvmTarget = '17'
-}
-
-tasks.build {
-    dependsOn shadowJar
 }
