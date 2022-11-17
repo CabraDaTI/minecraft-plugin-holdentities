@@ -14,6 +14,9 @@ class ConfigEntity(private val config: FileConfiguration) {
     fun addDefaults(entitys: List<EntityType>) {
         entitys
             .filter { entityType -> entityType != EntityType.UNKNOWN }
+            .sortedBy {
+                it.key.toString()
+            }
             .forEach { entityType ->
                 config.addDefault(entityType.key.toString(), false)
                 entitysSaved.add(entityType)
