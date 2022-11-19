@@ -12,9 +12,6 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Make dir
-        run: mkdir server
-
       - name: Make subdir
         run: mkdir server/plugins
 
