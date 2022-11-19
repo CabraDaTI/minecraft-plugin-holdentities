@@ -31,15 +31,17 @@ class App : JavaPlugin() {
             config
         )
 
-        server.pluginManager.registerEvents(
-            HoldEntityEvent(diContainer),
-            this
-        )
+        if (config.getBoolean(ATIVAR_PLUGIN)) {
+            server.pluginManager.registerEvents(
+                HoldEntityEvent(diContainer),
+                this
+            )
 
-        server.pluginManager.registerEvents(
-            LeaveEntity(),
-            this
-        )
+            server.pluginManager.registerEvents(
+                LeaveEntity(),
+                this
+            )
+        }
 
         super.onEnable()
 
