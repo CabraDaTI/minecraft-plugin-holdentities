@@ -1,23 +1,28 @@
-package org.cabradati.holdentities
+package org.cabradati.holdentities.events
 
-import org.bukkit.entity.EntityType
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerInteractEntityEvent
+import org.cabradati.holdentities.App
+import org.cabradati.holdentities.DIContainer
 
 class HoldEntityEvent(
-    private val entityType: EntityType
+    private val diContainer: DIContainer
 ) : Listener {
 
     @EventHandler(priority = EventPriority.LOW)
     fun onHoldEntity(event: PlayerInteractEntityEvent) {
-        if (event.rightClicked.type != entityType && isHoldable(event.player)) return
+
+        val toggleDaEntidade = diContainer.config.getBoolean(App.PREFIXO_ENTIDADE_SEGURAVEL + event.rightClicked.type)
+
+        if (!toggleDaEntidade && isHoldable(event.player)) return
 
         val player = event.player
         val entity = event.rightClicked
         player.addPassenger(entity)
+
     }
 
     private fun isHoldable(player: Player): Boolean {

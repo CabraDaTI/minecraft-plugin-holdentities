@@ -1,4 +1,4 @@
-package org.cabradati.holdentities
+package org.cabradati.holdentities.events
 
 import org.bukkit.event.EventHandler
 import org.bukkit.event.EventPriority
