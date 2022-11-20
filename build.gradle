@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'org.cabradati'
-version = '3.1'
+version = '3.2'
 
 jar.destinationDir(file("./server/plugins"))
 
