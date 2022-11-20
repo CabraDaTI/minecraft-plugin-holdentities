@@ -18,7 +18,7 @@ class HoldEntityEvent(
         val toggleDaEntidade = diContainer.config.getBoolean(App.PREFIXO_ENTIDADE_SEGURAVEL + event.rightClicked.type)
         if (!toggleDaEntidade) return
 
-        if (isHoldable(event.player)) return
+        if (!isHoldable(event.player)) return
 
         val player = event.player
         val entity = event.rightClicked
