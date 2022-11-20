@@ -53,3 +53,4 @@ server/world_the_end
 server/banned-ips.json
 server/banned-players.json
 server/whitelist.json
+server/plugins
