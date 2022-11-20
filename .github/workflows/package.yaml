@@ -13,9 +13,6 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Make subdir
-        run: mkdir server
-
-      - name: Make subdir
         run: mkdir server/plugins
 
       - name: Set up JDK 11
