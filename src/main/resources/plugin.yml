@@ -1,6 +1,6 @@
 author: ericklemos
 name: HoldEntities
-version: 3.0
+version: 10.0
 main: org.cabradati.holdentities.App
 api-version: 1.19
 load: STARTUP
