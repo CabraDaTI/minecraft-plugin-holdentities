@@ -14,6 +14,7 @@ class App : JavaPlugin() {
 
     override fun onEnable() {
 
+        logger.info("registrando configurações")
         config.addDefault(ATIVAR_PLUGIN, true)
 
         EntityType.values().filter { entityType ->
@@ -28,10 +29,12 @@ class App : JavaPlugin() {
         val diContainer = DIContainer(
             this,
             server,
-            config
+            config,
+            logger
         )
 
         if (config.getBoolean(ATIVAR_PLUGIN)) {
+            logger.info("registrando eventos")
             server.pluginManager.registerEvents(
                 HoldEntityEvent(diContainer),
                 this
@@ -41,6 +44,8 @@ class App : JavaPlugin() {
                 LeaveEntity(),
                 this
             )
+        } else {
+            logger.info("plugin está desabilitado, nenhum evento será registrado")
         }
 
         super.onEnable()
